@@ -253,9 +253,9 @@ function App() {
 
   return (
     <div className="container">
-      <header className="fade-in no-print" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textAlign: 'left' }}>
-          <Microscope size={36} style={{ color: 'var(--primary)' }} />
+      <header className="app-header fade-in no-print">
+        <div className="header-title-area">
+          <Microscope size={36} style={{ color: 'var(--primary)', flexShrink: 0 }} />
           <div>
             <h1 style={{ fontSize: '1.4rem', margin: 0, lineHeight: 1.2, fontWeight: 800, background: 'linear-gradient(to right, #818cf8, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Simulateur de Résistance des Matériaux
@@ -264,7 +264,7 @@ function App() {
           </div>
         </div>
         
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div className="header-actions">
           <div className="export-group" style={{ display: 'flex', gap: '0.5rem' }}>
             <button 
               className="btn btn-secondary" 

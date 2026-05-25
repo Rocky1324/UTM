@@ -102,10 +102,34 @@ header p {
   border-collapse: collapse;
 }
 
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
 @media (max-width: 1200px) {
   body {
     height: auto;
     overflow: auto;
+  }
+  .container {
+    height: auto;
   }
   .dashboard-container {
     grid-template-columns: 1fr 1.15fr;
@@ -114,6 +138,9 @@ header p {
     min-height: 0;
     align-items: start;
     overflow: visible;
+  }
+  .dashboard-container > *:nth-child(3) {
+    grid-column: span 2;
   }
   .middle-column {
     height: auto;
@@ -130,9 +157,37 @@ header p {
     align-items: start;
     overflow: visible;
   }
+  .dashboard-container > *:nth-child(3) {
+    grid-column: span 1;
+  }
   .middle-column {
     height: auto;
     overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .header-title-area {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header-actions .export-group {
+    width: 100%;
+    justify-content: center;
+  }
+  .header-actions .btn {
+    width: 100%;
   }
 }
 
@@ -308,9 +363,9 @@ td {
 
 .material-selector-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .material-btn-card {
